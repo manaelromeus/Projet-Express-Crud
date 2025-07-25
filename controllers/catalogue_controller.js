@@ -1,6 +1,6 @@
 const catalogueModel = require('../models/catalogue_model');
 
-// ➕ Ajouter un produit
+//  Ajouter un produit
 exports.ajouterProduit = async (req, res) => {
     try {
         const nouveauProduit = await catalogueModel.create(req.body);
@@ -10,7 +10,7 @@ exports.ajouterProduit = async (req, res) => {
     }
 };
 
-// 📃 Lister tous les produits
+//  Lister tous les produits
 exports.listerProduits = async (req, res) => {
     try {
         const produits = await catalogueModel.find();
@@ -20,7 +20,7 @@ exports.listerProduits = async (req, res) => {
     }
 };
 
-// 🔍 Afficher un produit par ID
+//  Afficher un produit par ID
 exports.unProduit = async (req, res) => {
     try {
         const produit = await catalogueModel.findById(req.params.id);
@@ -33,7 +33,7 @@ exports.unProduit = async (req, res) => {
     }
 };
 
-// ✏️ Modifier un produit
+//  Modifier un produit
 exports.updateProduit = async (req, res) => {
     try {
         const produitMisAJour = await catalogueModel.findByIdAndUpdate(
@@ -50,7 +50,7 @@ exports.updateProduit = async (req, res) => {
     }
 };
 
-// ❌ Supprimer un produit
+//  Supprimer un produit
 exports.effacerProduit = async (req, res) => {
     try {
         const produitSupprime = await catalogueModel.findByIdAndDelete(req.params.id);
